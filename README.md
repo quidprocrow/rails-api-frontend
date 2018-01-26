@@ -38,7 +38,7 @@ Developers should store styles in [`assets/styles`](assets/styles) and load them
 from [`assets/styles/index.scss`](assets/styles/index.scss).
 
 Developers should use [getFormFields](forms.md) to retrieve form data to send to
-an API.
+an API. 
 
 To deploy a browser-template based SPA, run `grunt deploy`.
 

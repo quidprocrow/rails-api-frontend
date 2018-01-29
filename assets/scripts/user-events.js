@@ -15,6 +15,7 @@ const creditRedirect = function () {
   $('#personal-statistics').hide()
   $('#show-games').html('')
   $('#profile-error').html('')
+  $('#create-list').hide()
 }
 
 // Takes the two inputs and creates a passwords objects with old and new keys,
@@ -41,6 +42,21 @@ const changePasswordRedirect = function () {
   $('#personal-statistics').hide()
   $('#show-games').html('')
   $('#profile-error').html('')
+  $('#create-list').hide()
+}
+
+// User is directed to create a new list.
+const createListRedirect = function () {
+  $('#two-player').hide()
+  $('#profile').hide()
+  $('#game-board').hide()
+  $('#change-pass').hide()
+  $('#instructions').hide()
+  $('#credit').hide()
+  $('#personal-statistics').hide()
+  $('#show-games').html('')
+  $('#profile-error').html('')
+  $('#create-list').show()
 }
 
 // User is signed out.
@@ -106,6 +122,7 @@ const addProfileHandlers = function () {
   $('#change-password-link').on('click', changePasswordRedirect)
   $('#change-password-form').on('submit', changePassword)
   $('#credit-link').on('click', creditRedirect)
+  $('#create-list-link').on('click', createListRedirect)
 }
 
 const signIn = function (event) {

@@ -48,6 +48,7 @@ const signOutSuccess = function (data) {
   $('#vs-play-button').hide()
   $('#greeting-space').hide()
   $('#sign-space').hide()
+  $('#create-list').hide()
   store.user = null
   $('#game-title').text('BYE BYE BYE').css('text-transform', 'uppercase')
 }

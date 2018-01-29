@@ -36,7 +36,7 @@
                     <a class="nav-link non-game sign-link" href="#" id="sign-up-link">UP</a>
                   </li>
                   <li class="nav-item active">
-                    <a class="nav-link non-game" href="#" id="play-game-link">PLAY</a>
+                    <a class="nav-link non-game" href="#" id="create-list-link">NEW</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link non-game" href="#" id="change-password-link">CHANGE PASS</a>
@@ -86,16 +86,12 @@
 <!-- PROFILE SECTION -->
       <section id="profile" class="profile">
         <div class="center">
-          <div class="vs">
-            <h2>PLAY VS.</h2>
-            </div>
-            <div class="vs-row">
-              <button class="little-button" ID="vs-guest-button">GUEST</button>
-            </div>
+          <h1>HELLO</h1>
         </div>
         <div id="profile-error">
         </div>
       </section>
+<!-- CHANGE PASS SECTION -->
       <section id="change-pass" class="change-pass">
         <h1 class="shrink">CHANGE PASS</h1>
         <form id="change-password-form" class="change-pass-form">
@@ -131,6 +127,18 @@
           <p>
           Sophia likes to play single-player games that let you have a pet and movies that are fast or furious (<a href="https://en.wikipedia.org/wiki/Logical_disjunction">inclusive &lsquo;or&rsquo;</a>). Please feel free to <a href="mailto:sophia.derugen-toomey@gmail.com">@</a> her.
           </p>
+        </div>
+      </section>
+<!-- CREATE LIST SECTION -->
+      <section id="create-list" class="change-pass">
+        <h1 class="shrink">NEW LIST</h1>
+        <form id="creat-list-form" class="change-pass-form">
+          <div class="center">
+          <input type="text" name= "list[name]" placeholder="NAME OF LIST" class="input-field">
+          </div>
+          <button class="little-button" id="create-list-form-button">CREATE LIST</button>
+        </form>
+        <div id="create-list-notification">
         </div>
       </section>
     </body>

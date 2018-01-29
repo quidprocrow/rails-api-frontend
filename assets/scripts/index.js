@@ -3,6 +3,7 @@
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const userEvents = require('./user-events')
+const listEvents = require('./list-events')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -10,6 +11,7 @@ $(() => {
   userEvents.addSignUpHandlers()
   userEvents.addIntroHandlers()
   userEvents.addProfileHandlers()
+  listEvents.addListHandlers()
   $('#change-pass').hide()
   $('#profile').hide()
   $('#sign-in').hide()
@@ -19,6 +21,7 @@ $(() => {
   $('.non-game').hide()
   $('#greeting-space').hide()
   $('#create-list').hide()
+  $('#write-list').hide()
 })
 
 // use require with a reference to bundle the file and use it in this file

@@ -132,13 +132,26 @@
 <!-- CREATE LIST SECTION -->
       <section id="create-list" class="change-pass">
         <h1 class="shrink">NEW LIST</h1>
-        <form id="creat-list-form" class="change-pass-form">
+        <form id="create-list-form" class="change-pass-form">
           <div class="center">
           <input type="text" name= "list[name]" placeholder="NAME OF LIST" class="input-field">
           </div>
           <button class="little-button" id="create-list-form-button">CREATE LIST</button>
         </form>
         <div id="create-list-notification">
+        </div>
+      </section>
+<!-- LIST SECTION -->
+      <section id="write-list" class="change-pass">
+        <h1 class="shrink" id="list-name">NEW LIST</h1>
+        <form id="write-list-form" class="change-pass-form">
+          <div class="center">
+            <input type="checkbox" name="archived">
+          <input type="TEXT" name= "item[content]" placeholder="WHAT NEEDS DOING?" class="input-field">
+          </div>
+          <button class="little-button" id="write-list-form-button">ADD ITEM</button>
+        </form>
+        <div id="write-list-notification">
         </div>
       </section>
     </body>

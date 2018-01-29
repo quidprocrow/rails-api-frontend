@@ -3,6 +3,18 @@
 const config = require('./config')
 const store = require('./store')
 
+// Changes user password.
+const changePasswordUser = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/change-password/',
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 // Signs out user.
 const signOutUser = function (data) {
   return $.ajax({
@@ -36,5 +48,6 @@ const signUpUser = function (data) {
 module.exports = {
   signInUser,
   signUpUser,
-  signOutUser
+  signOutUser,
+  changePasswordUser
 }

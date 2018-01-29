@@ -15,6 +15,7 @@ $(() => {
   $('#sign-in').hide()
   $('#sign-up').hide()
   $('#navigation').hide()
+  $('.non-game').hide()
 })
 
 // use require with a reference to bundle the file and use it in this file

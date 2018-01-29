@@ -8,7 +8,6 @@ const changePassSuccess = function () {
     $('#change-pass').hide()
     $('#profile').show()
   }
-  console.log('GREAT SUCCESS')
   const successHtml = (`<p>
     <b>Excellent!</b> Back to <a id="pass-profile-redirect">your profile</a>, then?</p>
     `)
@@ -49,6 +48,7 @@ const signOutSuccess = function (data) {
   $('#greeting-space').hide()
   $('#sign-space').hide()
   $('#create-list').hide()
+  $('#write-list').hide()
   store.user = null
   $('#game-title').text('BYE BYE BYE').css('text-transform', 'uppercase')
 }
@@ -104,6 +104,7 @@ const signInSuccess = function (data) {
   $('.sign-link').hide()
   $('#sign-in').hide()
   $('#profile').show()
+  $('#write-list').hide()
   // Clear any errors from previous sign in attempts.
   $('#sign-in-error').html('')
   $('#sign-up-notification').html('')

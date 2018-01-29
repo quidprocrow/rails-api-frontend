@@ -16,6 +16,7 @@ const creditRedirect = function () {
   $('#show-games').html('')
   $('#profile-error').html('')
   $('#create-list').hide()
+  $('#write-list').hide()
 }
 
 // Takes the two inputs and creates a passwords objects with old and new keys,
@@ -43,6 +44,7 @@ const changePasswordRedirect = function () {
   $('#show-games').html('')
   $('#profile-error').html('')
   $('#create-list').hide()
+  $('#write-list').hide()
 }
 
 // User is directed to create a new list.
@@ -57,6 +59,7 @@ const createListRedirect = function () {
   $('#show-games').html('')
   $('#profile-error').html('')
   $('#create-list').show()
+  $('#write-list').hide()
 }
 
 // User is signed out.

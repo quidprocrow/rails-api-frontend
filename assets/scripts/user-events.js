@@ -4,6 +4,19 @@ const api = require('./user-api')
 const ui = require('./user-ui')
 const store = require('./store')
 
+// User is directed to the credit.
+const creditRedirect = function () {
+  $('#two-player').hide()
+  $('#credit').show()
+  $('#instructions').hide()
+  $('#game-board').hide()
+  $('#change-pass').hide()
+  $('#profile').hide()
+  $('#personal-statistics').hide()
+  $('#show-games').html('')
+  $('#profile-error').html('')
+}
+
 // Takes the two inputs and creates a passwords objects with old and new keys,
 // sends a patch request. If successful, notes this to the user and requests
 // they return to their profile; otherwise, notes their failure.
@@ -92,6 +105,7 @@ const addProfileHandlers = function () {
   $('#sign-out-link').on('click', signOut)
   $('#change-password-link').on('click', changePasswordRedirect)
   $('#change-password-form').on('submit', changePassword)
+  $('#credit-link').on('click', creditRedirect)
 }
 
 const signIn = function (event) {

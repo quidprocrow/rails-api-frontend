@@ -1,2 +1,448 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+$black: #000;
+$white: #fff;
+$pink: #ffc0cb;
+
+body {
+  font-size: 18px;
+}
+
+p >
+a {
+  color: $pink;
+  text-decoration: none;
+}
+
+p
+> a:hover {
+  color: $black;
+  text-decoration: none;
+  text-shadow: 0px 1px $black;
+}
+
+section {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.board {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 50px;
+  margin: 50px auto;
+  width: 600px;
+}
+
+.board-row {
+  border: 0;
+  margin: 25px auto;
+  padding: 0;
+  width: 450px;
+}
+
+.player1,
+.player2 {
+  box-sizing: border-box;
+  float: left;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  width: 50%;
+}
+
+.player1 {
+  padding-right: 5px;
+}
+
+.player2 {
+  padding-left: 5px;
+}
+
+.turn {
+  background: $pink;
+  border-radius: 50px;
+  box-sizing: border-box;
+  color: white;
+  margin: 0 0 15px 0;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.ex,
+.oh,
+.stats-top
+{
+  color: $white;
+  background: $black;
+  width: 100%;
+}
+
+.player1,
+.player2,
+.ex,
+.oh,
+.turn {
+  min-height: 25px;
+}
+
+.secret {
+  color: transparent;
+  background: transparent;
+}
+
+.board-box {
+  align-items: center;
+  border: 1px solid $black;
+  display: flex;
+  float: left;
+  justify-content: center;
+  min-height: 150px;
+  min-width: 150px;
+  text-align: center;
+}
+
+.message {
+  background: transparent;
+  clear: both;
+  font-size: 20px;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 120px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 40px;
+  text-align: center;
+}
+
+.big-button {
+  background-color: $black;
+  border: 0;
+  color: $white;
+  display: block;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 120px;
+  height: 300px;
+  margin: 20px auto;
+  text-align: center;
+  width: 600px;
+}
+
+.input-field {
+  background: $white;
+  border: 1px solid $black;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+  height: 25px;
+  margin: 5px auto;
+  width: 600px;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+  width: 610px;
+}
+
+.justify {
+  font-size: 25px;
+  margin: 0 auto;
+  text-align: justify;
+  width: 600px;
+}
+
+.quote {
+  font-size: 25px;
+  margin: 0 auto 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.quote
+> p {
+  margin: 5px 0px;
+  padding: 0px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.little-button {
+  background-color: $black;
+  border: 0;
+  color: $white;
+  display: block;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 25px;
+  height: 50px;
+  margin: 20px auto;
+  padding: 1px;
+  text-align: center;
+  width: 150px;
+}
+
+.change-pass-form
+> .little-button {
+  width: 300px;
+}
+
+.show-incomplete-form
+> .little-button {
+  width: 300px;
+}
+.reset
+> .little-button {
+  width: 300px;
+}
+
+.profile-bottom {
+  clear: both;
+  margin: 0 auto;
+  text-align: center;
+  width: 604px;
+}
+
+.player
+> .little-button {
+  display: inline-block;
+  float: none;
+  margin: 0 auto 15px;
+  padding: 0;
+  width: 300px;
+}
+
+
+.vs {
+  align-items: center;
+  display: flex;
+  float: left;
+  height: 100%;
+  justify-content: center;
+  min-height: 100px;
+  min-width: 250px;
+  text-align: center;
+  width: 50%;
+}
+
+.vs-row {
+  clear: right;
+  float: right;
+  width: 50%;
+}
+
+p {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.sign-notice {
+  margin: 0 auto;
+  padding: 50px 0 0;
+  text-align: center;
+  width: 610px;
+}
+
+.navbar {
+  background: $black;
+  border-radius: 0;
+  color: $white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 25px;
+}
+
+.navbar-toggler {
+  background: $black;
+  border: 0;
+  float: right;
+  height: 32px;
+  margin: 7px 7px 0;
+  padding: 0;
+  width: 32px;
+}
+
+.navbar-brand {
+  background: $white;
+  color: $black;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 25px;
+}
+
+.navbar-nav {
+  list-style-type: none;
+}
+
+.nav-item {
+  margin: 7px 0 0;
+  padding: 0 15px;
+
+}
+
+.nav-item
+> a {
+  color: $white;
+  text-decoration: none;
+  width: 300px;
+}
+
+.nav-item
+> a:hover {
+  color: $black;
+  background-color: $white;
+}
+
+.stats-box {
+  box-sizing: border-box;
+  float: left;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+  min-height: 100px;
+  text-align: center;
+  width: 50%;
+  padding: 0 5px;
+}
+.total {
+  background: $white;
+}
+
+.scooch {
+  text-align: center;
+}
+
+@media only screen and (max-width: 650px) {
+  .navbar-collapse {
+    float: left;
+    clear: left;
+    padding-left: 7px;
+  }
+  .nav-item
+  > a{
+      display: block;
+  }
+  .big-button {
+    background-color: $black;
+    border: 0;
+    color: $white;
+    display: block;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 50px;
+    height: 150px;
+    margin: 20px auto;
+    text-align: center;
+    width: 300px;
+  }
+  .input-field {
+    background: $white;
+    border: 1px solid $black;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    height: 35px;
+    margin: 5px auto;
+    width: 298px;
+  }
+
+  .center {
+    margin: 0 auto;
+    text-align: center;
+    width: 300px;
+  }
+  .justify {
+    font-size: 25px;
+    margin: 0 auto;
+    text-align: justify;
+    width: 250px;
+  }
+  .shrink {
+    font-size: 50px;
+    }
+    p {
+      width: 400px;
+      padding: 0;
+    }
+    .board,
+    .personal-statistics {
+      margin: 0 auto;
+      width: 300px;
+    }
+    .board-row {
+      width: 300px;
+      margin: 0;
+      padding: 0;
+    }
+    .board-box {
+      min-height: 100px;
+      min-width: 100px;
+    }
+    .board-box
+    > p {
+      font-size: 20px;
+      max-width: 50px;
+    }
+    .stats-box,
+    .stats-top {
+      min-height: 25px;
+      min-width: 300px;
+    }
+    .stats-box
+    > .total {
+      font-size: 20px;
+      max-width: 300px;
+      min-height: 75px;
+    }
+    .message >
+    p {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    }
+    .vs {
+      width: 100%;
+      min-height: 100px;
+      float: none;
+    }
+    .vs-row {
+      float: none;
+      width: 100%;
+    }
+    .vs-row >
+    .little-button {
+      display: inline-block;
+    }
+    .quote >
+    p {
+      font-size: 20px;
+    }
+    .name {
+      display: none;
+    }
+    .turn {
+      margin-top: 10px;
+    }
+    .scooch {
+      text-align: justify;
+    }
+}
+@media only screen and (max-width: 500px) {
+  .justify {
+    font-size: 25px;
+    margin: 0;
+    text-align: justify;
+    width: 250px;
+  }
+  .quote >
+  p {
+    font-size: 20px;
+  }
+}
+
+
+// make sure to decrease h1 size for mobile

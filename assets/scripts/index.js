@@ -22,6 +22,7 @@ $(() => {
   $('#greeting-space').hide()
   $('#create-list').hide()
   $('#write-list').hide()
+  $('body').on('click', '.remove-list', listEvents.onRemoveList)
 })
 
 // use require with a reference to bundle the file and use it in this file

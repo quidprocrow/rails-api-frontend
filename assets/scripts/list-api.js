@@ -49,9 +49,22 @@ const getListIndex = function () {
   })
 }
 
+// Deletes an item.
+const deleteList = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/lists/' + data,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+      'Content-Type': 'application/json'
+    }
+  })
+}
+
 module.exports = {
   createList,
   createItem,
   getList,
-  getListIndex
+  getListIndex,
+  deleteList
 }

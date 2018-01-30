@@ -4,6 +4,15 @@ const api = require('./list-api')
 const ui = require('./list-ui')
 const store = require('./store')
 
+const onRemoveList = function (event) {
+  event.preventDefault()
+  let data = event.target
+  data = $(event.target).data('id')
+  api.deleteList(data)
+    .then(console.log('goodbye cruel world'))
+    .catch(console.log('hello cruel world'))
+}
+
 const createNewList = function (event) {
   event.preventDefault()
   let data = getFormFields(event.target)
@@ -33,5 +42,6 @@ const addListHandlers = function () {
 
 module.exports = {
   createNewList,
-  addListHandlers
+  addListHandlers,
+  onRemoveList
 }

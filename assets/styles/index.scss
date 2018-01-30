@@ -94,14 +94,40 @@ section {
 }
 
 .list-box {
-  align-items: center;
   border: 5px solid transparent;
-  display: flex;
-  float: left;
-  justify-content: center;
-  min-height: 150px;
-  min-width: 150px;
+  margin: 10px;
+  min-height: 50px;
+  min-width: 100%;
   text-align: center;
+  background: pink;
+  overflow: auto;
+}
+
+.list-box > div {
+  float: left;
+  padding: 0px;
+  margin: 0px;
+  max-width: 80%;
+  text-align: justify;
+}
+
+.remove-list {
+  align-items: center;
+  float: right;
+  color: white;
+  background: black;
+  line-height: 50px;
+  font-size: 50px;
+  height: 50px;
+  width: 50px;
+  vertical-align: middle;
+  padding: 0px;
+  margin: 0px;
+}
+
+.remove-list p {
+  text-align: center;
+  line-height: 60px;
 }
 
 .message {

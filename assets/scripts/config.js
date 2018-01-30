@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://ga-wdi-boston.herokuapp.com',
+    production: 'https://shrouded-wave-18009.herokuapp.com/',
     development: 'http://localhost:4741'
   }
 }

@@ -2,7 +2,27 @@
 const getFormFields = require('../../lib/get-form-fields.js')
 const api = require('./user-api')
 const ui = require('./user-ui')
+const listApi = require('./list-api')
+const listUi = require('./list-ui')
 const store = require('./store')
+
+// User is directed to the index.
+const indexListRedirect = function () {
+  $('#two-player').hide()
+  $('#credit').hide()
+  $('#instructions').hide()
+  $('#game-board').hide()
+  $('#change-pass').hide()
+  $('#profile').show()
+  $('#personal-statistics').hide()
+  $('#show-games').html('')
+  $('#profile-error').html('')
+  $('#create-list').hide()
+  $('#write-list').hide()
+  listApi.getListIndex()
+    .then(listUi.indexListSuccess)
+    .catch(console.errors)
+}
 
 // User is directed to the credit.
 const creditRedirect = function () {
@@ -126,6 +146,7 @@ const addProfileHandlers = function () {
   $('#change-password-form').on('submit', changePassword)
   $('#credit-link').on('click', creditRedirect)
   $('#create-list-link').on('click', createListRedirect)
+  $('#index-list-link').on('click', indexListRedirect)
 }
 
 const signIn = function (event) {

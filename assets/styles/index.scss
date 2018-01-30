@@ -407,10 +407,12 @@ p {
       min-height: 100px;
       min-width: 100px;
     }
-    .board-box
-    > p {
+    .list-box, .list-area {
       font-size: 20px;
-      max-width: 50px;
+      max-width: 300px;
+    }
+    .list-box > div {
+      width: 300px;
     }
     .stats-box,
     .stats-top {

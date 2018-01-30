@@ -19,6 +19,7 @@ const indexListRedirect = function () {
   $('#profile-error').html('')
   $('#create-list').hide()
   $('#write-list').hide()
+  $('#write-list-area').html('')
   listApi.getListIndex()
     .then(listUi.indexListSuccess)
     .catch(console.errors)
@@ -37,6 +38,7 @@ const creditRedirect = function () {
   $('#profile-error').html('')
   $('#create-list').hide()
   $('#write-list').hide()
+  $('#write-list-area').html('')
 }
 
 // Takes the two inputs and creates a passwords objects with old and new keys,
@@ -65,6 +67,7 @@ const changePasswordRedirect = function () {
   $('#profile-error').html('')
   $('#create-list').hide()
   $('#write-list').hide()
+  $('#write-list-area').html('')
 }
 
 // User is directed to create a new list.
@@ -80,6 +83,7 @@ const createListRedirect = function () {
   $('#profile-error').html('')
   $('#create-list').show()
   $('#write-list').hide()
+  $('#write-list-area').html('')
 }
 
 // User is signed out.
@@ -118,6 +122,7 @@ const introSignIn = function (event) {
   $('#navigation').show()
   $('#sign-space').show()
   $('.sign-link').show()
+  $('#write-list-area').html('')
 }
 
 // Goes to sign up section, hides the intro.

@@ -13,7 +13,6 @@ const removeListSuccess = function () {
 
 // Index Lists.
 const indexListSuccess = function (data) {
-  console.log('hello', data)
   const indexListHtml = indexListTemplate({ lists: data.lists })
   $('#list-index').html(indexListHtml)
 }
@@ -27,7 +26,9 @@ const indexListSuccess = function (data) {
 // Indicate success .
 const createListSuccess = function (data) {
   store.newList = data.list
+  $('#write-list-area').html('')
   $('#create-list').hide()
+  $('#profile').hide()
   $('#write-list').show()
   const nameHtml = (`
     ${store.newList.name}
@@ -61,7 +62,7 @@ const getListFailure = function (data) {
     <p>Contact the
     <a href="mailto:windmillwarrior@gmail.com">administrator</a> otherwise.</p>
     `)
-  $('#create-list-notification').html(errorHtml).attr('class', 'center')
+  $('#write-list-notification').html(errorHtml).attr('class', 'center')
 }
 
 // Indicate success creating an item.
@@ -82,6 +83,31 @@ const createItemFailure = function (data) {
   $('#write-list-notification').html(errorHtml).attr('class', 'center')
 }
 
+// Get list success.
+const getOldListSuccess = function (data) {
+  store.oldList = data.list
+  $('#write-list-area').html('')
+  $('#create-list').hide()
+  $('#profile').hide()
+  $('#write-list').show()
+  const nameHtml = (`
+    ${store.oldList.name}
+    `)
+  $('#list-name').html(nameHtml).css('text-transform', 'uppercase')
+  api.getList()
+    .then(getListSuccess)
+    .catch(getListFailure)
+}
+
+// Display the fact of an error to the user.
+const getOldListFailure = function (data) {
+  const errorHtml = (`<p>
+    <b>Oops!</b> There's been an error!
+    </p>
+    `)
+  $('#profile-error').html(errorHtml).attr('class', 'center')
+}
+
 module.exports = {
   createListFailure,
   createListSuccess,
@@ -90,5 +116,7 @@ module.exports = {
   getListFailure,
   getListSuccess,
   indexListSuccess,
-  removeListSuccess
+  removeListSuccess,
+  getOldListSuccess,
+  getOldListFailure
 }

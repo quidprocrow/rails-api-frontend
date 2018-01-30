@@ -2,6 +2,6 @@
 {{#each lists as |list|}}
 
 
-    <div class="list-box"><div class="remove-list" style="float: right;" data-id="{{list.id}}"><p>X</p></div> <div>{{list.name}}</div></div>
+    <div class="list-box"><p class="remove-list" style="float: right;" data-id={{list.id}}>X</p> <div class="load-list" data-id={{list.id}}>{{list.name}}</div></div>
 
 {{/each}}

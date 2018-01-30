@@ -4,13 +4,24 @@ const api = require('./list-api')
 const ui = require('./list-ui')
 const store = require('./store')
 
+const onLoadList = function (event) {
+  event.preventDefault()
+  let data = event.target
+  data = $(event.target).data('id')
+  store.newList = {}
+  store.newList.id = data
+  api.getList()
+    .then(ui.getOldListSuccess)
+    .catch(ui.getOldListFailure)
+}
+
 const onRemoveList = function (event) {
   event.preventDefault()
   let data = event.target
   data = $(event.target).data('id')
   api.deleteList(data)
     .then(ui.removeListSuccess)
-    .catch(console.log('hello cruel world'))
+    .catch(ui.getOldListFailure)
 }
 
 const createNewList = function (event) {
@@ -43,5 +54,6 @@ const addListHandlers = function () {
 module.exports = {
   createNewList,
   addListHandlers,
-  onRemoveList
+  onRemoveList,
+  onLoadList
 }

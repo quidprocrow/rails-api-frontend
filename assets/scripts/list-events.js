@@ -9,7 +9,7 @@ const onRemoveList = function (event) {
   let data = event.target
   data = $(event.target).data('id')
   api.deleteList(data)
-    .then(console.log('goodbye cruel world'))
+    .then(ui.removeListSuccess)
     .catch(console.log('hello cruel world'))
 }
 

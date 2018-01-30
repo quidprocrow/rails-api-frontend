@@ -4,6 +4,13 @@ const api = require('./list-api')
 const showListTemplate = require('./showListTemplate.handlebars')
 const indexListTemplate = require('./indexListTemplate.handlebars')
 
+// Remove list success.
+const removeListSuccess = function () {
+  api.getListIndex()
+    .then(indexListSuccess)
+    .catch(console.errors)
+}
+
 // Index Lists.
 const indexListSuccess = function (data) {
   console.log('hello', data)
@@ -82,5 +89,6 @@ module.exports = {
   createItemSuccess,
   getListFailure,
   getListSuccess,
-  indexListSuccess
+  indexListSuccess,
+  removeListSuccess
 }

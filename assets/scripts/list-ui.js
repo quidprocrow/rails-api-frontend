@@ -2,6 +2,20 @@
 const store = require('./store')
 const api = require('./list-api')
 const showListTemplate = require('./showListTemplate.handlebars')
+const indexListTemplate = require('./indexListTemplate.handlebars')
+
+// Index Lists.
+const indexListSuccess = function (data) {
+  console.log('hello', data)
+  const indexListHtml = indexListTemplate({ lists: data.lists })
+  $('#list-index').html(indexListHtml)
+}
+
+// // Index Lists.
+// const indexListFailure = function (data) {
+//   const indexListHtml = indexListTemplate({ lists: data.lists })
+//   $('#list-index').html(showListHtml)
+// }
 
 // Indicate success .
 const createListSuccess = function (data) {
@@ -27,7 +41,6 @@ const createListFailure = function (data) {
 }
 // Display the fact of an error to the user.
 const getListSuccess = function (data) {
-  console.log('success!', data.list.items)
   const showListHtml = showListTemplate({ items: data.list.items })
   $('#write-list-area').html(showListHtml)
 }
@@ -68,5 +81,6 @@ module.exports = {
   createItemFailure,
   createItemSuccess,
   getListFailure,
-  getListSuccess
+  getListSuccess,
+  indexListSuccess
 }

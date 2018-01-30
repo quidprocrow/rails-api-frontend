@@ -1,6 +1,8 @@
 'use strict'
 
 const store = require('./store')
+const listApi = require('./list-api')
+const listUi = require('./list-ui')
 
 // Indicate success and invite user back to profile.
 const changePassSuccess = function () {
@@ -116,6 +118,9 @@ const signInSuccess = function (data) {
   } else {
     $('.user-greeting').html('Friend').css('text-transform', 'uppercase')
   }
+  listApi.getListIndex()
+    .then(listUi.indexListSuccess)
+    .catch(console.errors)
 }
 
 // Display the fact of an error to the user.

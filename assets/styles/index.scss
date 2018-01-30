@@ -29,7 +29,7 @@ section {
   width: 100%;
 }
 
-.board {
+.list-area {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 50px;
   margin: 50px auto;
@@ -93,9 +93,9 @@ section {
   background: transparent;
 }
 
-.board-box {
+.list-box {
   align-items: center;
-  border: 1px solid $black;
+  border: 5px solid transparent;
   display: flex;
   float: left;
   justify-content: center;

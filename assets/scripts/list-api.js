@@ -39,8 +39,19 @@ const getList = function () {
   })
 }
 
+const getListIndex = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/lists/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createList,
   createItem,
-  getList
+  getList,
+  getListIndex
 }

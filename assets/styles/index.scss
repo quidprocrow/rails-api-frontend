@@ -169,6 +169,10 @@ h2 {
   width: 600px;
 }
 
+.navbar-brand {
+  cursor: default;
+}
+
 .center {
   margin: 0 auto;
   text-align: center;
@@ -347,7 +351,7 @@ p {
 
 #hover-directions {
     width: 100%;
-    height: 200px;
+    height: 150px;
     color: pink;
   }
   .navbar-collapse {

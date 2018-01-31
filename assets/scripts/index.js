@@ -28,6 +28,7 @@ $(() => {
   $('body').on('mouseout', '.remove-list', userEvents.onDeleteOff)
   $('body').on('mouseenter', '.load-list', userEvents.onLoadHover)
   $('body').on('mouseout', '.load-list', userEvents.onLoadOff)
+  $('body').on('click', '.item-changer', listEvents.onItemClick)
 })
 
 // use require with a reference to bundle the file and use it in this file

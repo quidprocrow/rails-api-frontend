@@ -4,6 +4,18 @@ const api = require('./list-api')
 const ui = require('./list-ui')
 const store = require('./store')
 
+const onItemClick = function (event) {
+  store.itemUpdate = {}
+  store.itemUpdate.id = $(event.target).data('id')
+  store.itemUpdate.content = $(event.target).data('content')
+  const listHtml = (`
+    <form id="update-item-form" class="change-pass-form">
+      <input type="TEXT" name= "item[content]" placeholder="${store.itemUpdate.content}" class="input-field">
+      </form>
+  `)
+  $(this).html(listHtml).removeClass('item-changer')
+}
+
 const onLoadList = function (event) {
   event.preventDefault()
   let data = event.target
@@ -55,5 +67,6 @@ module.exports = {
   createNewList,
   addListHandlers,
   onRemoveList,
-  onLoadList
+  onLoadList,
+  onItemClick
 }

@@ -1,8 +1,8 @@
-<ul>
+<div class="center" style="text-transform: uppercase;">
 {{#each items as |item|}}
 
 
-    <li>{{item.content}}</li>
+    <p class="center item-changer" data-id="{{item.id}}" data-content="{{item.content}}">{{item.content}}</p>
 
 {{/each}}
-</ul>
+</div>

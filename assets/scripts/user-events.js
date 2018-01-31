@@ -153,6 +153,8 @@ const introSignIn = function (event) {
   $('#sign-space').show()
   $('.sign-link').show()
   $('#write-list-area').html('')
+  $('#sign-up-notification').html('')
+  $('#sign-in-notification').html('')
 }
 
 // Goes to sign up section, hides the intro.
@@ -164,6 +166,8 @@ const introSignUp = function (event) {
   $('#navigation').show()
   $('#sign-space').show()
   $('.sign-link').show()
+  $('#sign-up-notification').html('')
+  $('#sign-in-notification').html('')
 }
 
 // Add click events for the intro section buttions.

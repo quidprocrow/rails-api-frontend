@@ -54,6 +54,8 @@ const signOutSuccess = function (data) {
   $('#write-list-area').html('')
   store.user = null
   $('#game-title').text('BYE BYE BYE').css('text-transform', 'uppercase')
+  $('#sign-up-notification').html('')
+  $('#sign-in-notification').html('')
 }
 
 // Display the fact of an error to the user.
@@ -74,6 +76,7 @@ const redirect = function () {
   $('#sign-up').hide()
   $('#sign-in').show()
   $('#sign-up-notification').html('')
+  $('#sign-in-notification').html('')
 }
 
 // Hide the previous section, show the profile, and store user information.
@@ -138,7 +141,7 @@ const signInFailure = function (data) {
     <p>Contact the
     <a href="mailto:windmillwarrior@gmail.com">administrator</a> otherwise.</p>
     `)
-  $('#sign-in-error').html(errorHtml).attr('class', 'sign-notice')
+  $('#sign-in-notification').html(errorHtml).attr('class', 'sign-notice')
   $('#sign-up-redirect').on('click', redirect)
 }
 

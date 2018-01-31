@@ -9,11 +9,12 @@ const onItemClick = function (event) {
   store.itemUpdate.id = $(event.target).data('id')
   store.itemUpdate.content = $(event.target).data('content')
   const listHtml = (`
-    <form id="update-item-form" class="change-pass-form">
-      <input type="TEXT" name= "item[content]" placeholder="${store.itemUpdate.content}" class="input-field">
+    <form id="update-item-form" class="change-pass-form" style="width: 100%; display: block; margin: auto; height: 100px;">
+     <input type="TEXT" name= "item[content]" placeholder="${store.itemUpdate.content}" class="input-field">   <p class="nvm" data-id=${store.itemUpdate.id}>NVM</p> <p class="remove-list" data-id=${store.itemUpdate.id}>X</p>
       </form>
   `)
   $(this).html(listHtml).removeClass('item-changer')
+  $('#list-directions').html('PRESS ENTER TO EDIT')
 }
 
 const onLoadList = function (event) {

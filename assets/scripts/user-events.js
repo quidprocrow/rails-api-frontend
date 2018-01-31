@@ -6,12 +6,22 @@ const listApi = require('./list-api')
 const listUi = require('./list-ui')
 const store = require('./store')
 
+const onNvmHover = function () {
+  $('#list-directions').html('RELOAD UNEDITED LIST')
+}
+
+const onNvmOff = function () {
+  $('#list-directions').html('PRESS ENTER TO EDIT')
+}
+
 const onDeleteHover = function () {
   $('#hover-directions').html('DUST THAT LIST')
+  $('#list-directions').html('DESTROY IT')
 }
 
 const onDeleteOff = function () {
   $('#hover-directions').html('TO BE DONE')
+  $('#list-directions').html('PRESS ENTER TO EDIT')
 }
 
 const onLoadHover = function () {
@@ -196,5 +206,7 @@ module.exports = {
   onDeleteOff,
   onDeleteHover,
   onLoadOff,
-  onLoadHover
+  onLoadHover,
+  onNvmOff,
+  onNvmHover
 }

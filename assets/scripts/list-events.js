@@ -4,17 +4,43 @@ const api = require('./list-api')
 const ui = require('./list-ui')
 const store = require('./store')
 
+const onItemUpdate = function (event) {
+  event.preventDefault()
+  console.log(store.oldList.id)
+  let data = getFormFields(event.target)
+  data.item.archived = 'OFF'
+  data.item.id = store.itemUpdate.id
+  data.item.list_id = store.oldList.id
+  console.log(data.item.id)
+  data = JSON.stringify(data)
+  api.updateItem(data)
+    .then(ui.createItemSuccess)
+    .catch(ui.itemUpdateFailure)
+}
+
+const onNvmClick = function () {
+  $('#write-list-notification').html('')
+  api.getList()
+    .then(ui.getListSuccess)
+    .catch(ui.getListFailure)
+}
+
 const onItemClick = function (event) {
-  store.itemUpdate = {}
-  store.itemUpdate.id = $(event.target).data('id')
-  store.itemUpdate.content = $(event.target).data('content')
-  const listHtml = (`
-    <form id="update-item-form" class="change-pass-form" style="width: 100%; display: block; margin: auto; height: 100px;">
-     <input type="TEXT" name= "item[content]" placeholder="${store.itemUpdate.content}" class="input-field">   <p class="nvm" data-id=${store.itemUpdate.id}>NVM</p> <p class="remove-list" data-id=${store.itemUpdate.id}>X</p>
-      </form>
-  `)
-  $(this).html(listHtml).removeClass('item-changer')
-  $('#list-directions').html('PRESS ENTER TO EDIT')
+  if (store.itemBeingEdited !== true) {
+    store.itemUpdate = {}
+    store.itemBeingEdited = true
+    store.itemUpdate.id = $(event.target).data('id')
+    store.itemUpdate.content = $(event.target).data('content')
+    const listHtml = (`
+      <form id="update-item-form" class="change-pass-form update-item-form" style="width: 100%; display: block; margin: auto; height: 120px;">
+       <input type="TEXT" name= "item[content]" placeholder="${store.itemUpdate.content}" class="input-field"><p></p>   <p class="nvm" data-id=${store.itemUpdate.id}>NVM</p> <p class="remove-list" data-id=${store.itemUpdate.id}>X</p>
+        </form>
+    `)
+    $(this).html(listHtml).removeClass('item-changer')
+    $('#list-directions').html('PRESS ENTER TO EDIT')
+  } else {
+    $('#list-directions').html('ONE AT A TIME PLEASE')
+  }
 }
 
 const onLoadList = function (event) {
@@ -69,5 +95,7 @@ module.exports = {
   addListHandlers,
   onRemoveList,
   onLoadList,
-  onItemClick
+  onItemClick,
+  onNvmClick,
+  onItemUpdate
 }

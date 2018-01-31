@@ -126,7 +126,8 @@ section {
 }
 
 #write-list-area .remove-list {
-  margin: 2px 10px 2px 2px;
+  margin: 2px 5px 10px 2px;
+  cursor: help;
 }
 
 .nvm {
@@ -137,10 +138,26 @@ section {
   line-height: 60px;
   font-size: 50px;
   height: 50px;
-  width: 120px;
+  width: 130px;
   vertical-align: middle;
   padding: 0px;
-  margin: 2px 10px 2px 10px;
+  margin: 2px 5px 10px 2px;
+  cursor: help;
+}
+
+.update-item {
+  align-items: center;
+  float: right;
+  color: white;
+  background: black;
+  line-height: 60px;
+  font-size: 50px;
+  height: 50px;
+  width: 80px;
+  vertical-align: middle;
+  padding: 0px;
+  margin: 2px 5px 10px 2px;
+  cursor: help;
 }
 
 .message {

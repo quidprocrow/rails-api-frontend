@@ -31,6 +31,8 @@ $(() => {
   $('body').on('click', '.item-changer', listEvents.onItemClick)
   $('body').on('mouseenter', '.nvm', userEvents.onNvmHover)
   $('body').on('mouseout', '.nvm', userEvents.onNvmOff)
+  $('body').on('click', '.nvm', listEvents.onNvmClick)
+  $('body').on('submit', '.update-item-form', listEvents.onItemUpdate)
 })
 
 // use require with a reference to bundle the file and use it in this file

@@ -4,6 +4,14 @@ const api = require('./list-api')
 const showListTemplate = require('./showListTemplate.handlebars')
 const indexListTemplate = require('./indexListTemplate.handlebars')
 
+// Display the fact of an error to the user.
+const itemUpdateFailure = function (data) {
+  const errorHtml = (`
+    <p>Please ensure you gave that task some content.</p>
+    `)
+  $('#write-list-notification').html(errorHtml).attr('class', 'center')
+}
+
 // Remove list success.
 const removeListSuccess = function () {
   api.getListIndex()
@@ -20,6 +28,8 @@ const indexListSuccess = function (data) {
 // Indicate success .
 const createListSuccess = function (data) {
   store.newList = data.list
+  store.oldList = store.newList
+  store.itemBeingEdited = false
   $('#write-list-area').html('')
   $('#create-list').hide()
   $('#profile').hide()
@@ -27,6 +37,7 @@ const createListSuccess = function (data) {
   const nameHtml = (`
     ${store.newList.name}
     `)
+  $('#list-directions').html('CLICK TO EDIT ITEMS')
   $('#list-name').html(nameHtml).css('text-transform', 'uppercase')
 }
 
@@ -35,7 +46,7 @@ const createListFailure = function (data) {
   const errorHtml = (`<p>
     <b>Oops!</b> There's been an error!
     </p>
-    <p>Please ensure you filled out this field correctly.</p>
+    <p>Please ensure you gave that list a name.</p>
     <p>Contact the
     <a href="mailto:windmillwarrior@gmail.com">administrator</a> otherwise.</p>
     `)
@@ -43,6 +54,8 @@ const createListFailure = function (data) {
 }
 // Display the fact of an error to the user.
 const getListSuccess = function (data) {
+  store.itemBeingEdited = false
+  $('#list-directions').html('CLICK TO EDIT ITEMS')
   const showListHtml = showListTemplate({ items: data.list.items })
   $('#write-list-area').html(showListHtml)
 }
@@ -61,6 +74,7 @@ const getListFailure = function (data) {
 
 // Indicate success creating an item.
 const createItemSuccess = function (data) {
+  $('#write-list-notification').html('')
   store.newItem = data.item
   $('#write-list-form').find('input[type=text], textarea').val('')
   api.getList()
@@ -70,9 +84,8 @@ const createItemSuccess = function (data) {
 
 // Display the fact of an error to the user.
 const createItemFailure = function (data) {
-  const errorHtml = (`<p>
-    <b>Oops!</b> There's been an error!
-    </p>
+  const errorHtml = (`
+    <p>Please ensure you gave that task some content.</p>
     `)
   $('#write-list-notification').html(errorHtml).attr('class', 'center')
 }
@@ -112,5 +125,6 @@ module.exports = {
   indexListSuccess,
   removeListSuccess,
   getOldListSuccess,
-  getOldListFailure
+  getOldListFailure,
+  itemUpdateFailure
 }

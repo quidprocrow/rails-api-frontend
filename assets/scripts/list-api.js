@@ -61,10 +61,24 @@ const deleteList = function (data) {
   })
 }
 
+// Creates list.
+const updateItem = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/items/' + store.itemUpdate.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+      'Content-Type': 'application/json'
+    },
+    data
+  })
+}
+
 module.exports = {
   createList,
   createItem,
   getList,
   getListIndex,
-  deleteList
+  deleteList,
+  updateItem
 }

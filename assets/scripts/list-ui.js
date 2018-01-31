@@ -10,6 +10,7 @@ const itemUpdateFailure = function (data) {
     <p>Please ensure you gave that task some content.</p>
     `)
   $('#write-list-notification').html(errorHtml).attr('class', 'center')
+  $('.input-field').find('input[type=text], textarea').val('')
 }
 
 // Remove list success.
@@ -34,6 +35,7 @@ const createListSuccess = function (data) {
   $('#create-list').hide()
   $('#profile').hide()
   $('#write-list').show()
+  $('#yell-at-me').hide()
   const nameHtml = (`
     ${store.newList.name}
     `)
@@ -90,6 +92,7 @@ const createItemFailure = function (data) {
     <p>Please ensure you gave that task some content.</p>
     `)
   $('#write-list-notification').html(errorHtml).attr('class', 'center')
+  $('.input-field').find('input[type=text], textarea').val('')
 }
 
 // Get list success.
@@ -99,6 +102,7 @@ const getOldListSuccess = function (data) {
   $('#create-list').hide()
   $('#profile').hide()
   $('#write-list').show()
+  $('#yell-at-me').hide()
   const nameHtml = (`
     ${store.oldList.name}
     `)

@@ -52,6 +52,7 @@ const signOutSuccess = function (data) {
   $('#create-list').hide()
   $('#write-list').hide()
   $('#write-list-area').html('')
+  $('#yell-at-me').hide()
   store.user = null
   $('#game-title').text('BYE BYE BYE').css('text-transform', 'uppercase')
   $('#sign-up-notification').html('')

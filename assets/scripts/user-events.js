@@ -32,6 +32,24 @@ const onLoadOff = function () {
   $('#hover-directions').html('TO BE DONE')
 }
 
+// User is directed to create a new list.
+const yellingRedirect = function () {
+  $('#two-player').hide()
+  $('#profile').hide()
+  $('#game-board').hide()
+  $('#change-pass').hide()
+  $('#instructions').hide()
+  $('#credit').hide()
+  $('#personal-statistics').hide()
+  $('#show-games').html('')
+  $('#profile-error').html('')
+  $('#create-list').hide()
+  $('#write-list').hide()
+  $('#write-list-area').html('')
+  $('#hover-directions').html('TO BE DONE')
+  $('#yell-at-me').show()
+}
+
 // User is directed to the index.
 const indexListRedirect = function () {
   $('#two-player').hide()
@@ -47,6 +65,7 @@ const indexListRedirect = function () {
   $('#write-list').hide()
   $('#write-list-area').html('')
   $('#hover-directions').html('TO BE DONE')
+  $('#yell-at-me').hide()
   listApi.getListIndex()
     .then(listUi.indexListSuccess)
     .catch(listUi.getOldListFailure)
@@ -67,6 +86,7 @@ const creditRedirect = function () {
   $('#write-list').hide()
   $('#write-list-area').html('')
   $('#hover-directions').html('TO BE DONE')
+  $('#yell-at-me').hide()
 }
 
 // Takes the two inputs and creates a passwords objects with old and new keys,
@@ -97,6 +117,7 @@ const changePasswordRedirect = function () {
   $('#write-list').hide()
   $('#write-list-area').html('')
   $('#hover-directions').html('TO BE DONE')
+  $('#yell-at-me').hide()
 }
 
 // User is directed to create a new list.
@@ -114,6 +135,7 @@ const createListRedirect = function () {
   $('#write-list').hide()
   $('#write-list-area').html('')
   $('#hover-directions').html('TO BE DONE')
+  $('#yell-at-me').hide()
 }
 
 // User is signed out.
@@ -186,6 +208,7 @@ const addProfileHandlers = function () {
   $('#credit-link').on('click', creditRedirect)
   $('#create-list-link').on('click', createListRedirect)
   $('#index-list-link').on('click', indexListRedirect)
+  $('#yelling-link').on('click', yellingRedirect)
 }
 
 const signIn = function (event) {

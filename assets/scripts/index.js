@@ -22,6 +22,7 @@ $(() => {
   $('#greeting-space').hide()
   $('#create-list').hide()
   $('#write-list').hide()
+  $('#yell-at-me').hide()
   $('body').on('click', '.remove-list', listEvents.onRemoveList)
   $('body').on('click', '.load-list', listEvents.onLoadList)
   $('body').on('mouseenter', '.remove-list', userEvents.onDeleteHover)

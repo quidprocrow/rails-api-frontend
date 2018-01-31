@@ -16,12 +16,10 @@ const onRemoveItemClick = function (event) {
 
 const onItemUpdate = function (event) {
   event.preventDefault()
-  console.log(store.oldList.id)
   let data = getFormFields(event.target)
   data.item.archived = 'OFF'
   data.item.id = store.itemUpdate.id
   data.item.list_id = store.oldList.id
-  console.log(data.item.id)
   data = JSON.stringify(data)
   api.updateItem(data)
     .then(ui.createItemSuccess)

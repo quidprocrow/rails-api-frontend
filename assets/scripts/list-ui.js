@@ -75,7 +75,9 @@ const getListFailure = function (data) {
 // Indicate success creating an item.
 const createItemSuccess = function (data) {
   $('#write-list-notification').html('')
-  store.newItem = data.item
+  if (data !== undefined) {
+    store.newItem = data.item
+  }
   $('#write-list-form').find('input[type=text], textarea').val('')
   api.getList()
     .then(getListSuccess)

@@ -49,7 +49,7 @@ const getListIndex = function () {
   })
 }
 
-// Deletes an item.
+// Deletes a list.
 const deleteList = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/lists/' + data,
@@ -74,11 +74,24 @@ const updateItem = function (data) {
   })
 }
 
+// Deletes an item.
+const deleteItem = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/items/' + data,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+      'Content-Type': 'application/json'
+    }
+  })
+}
+
 module.exports = {
   createList,
   createItem,
   getList,
   getListIndex,
   deleteList,
-  updateItem
+  updateItem,
+  deleteItem
 }

@@ -4,6 +4,16 @@ const api = require('./list-api')
 const ui = require('./list-ui')
 const store = require('./store')
 
+const onRemoveItemClick = function (event) {
+  event.preventDefault()
+  let data = event.target
+  data = $(event.target).data('id')
+  console.log(data)
+  api.deleteItem(data)
+    .then(ui.createItemSuccess)
+    .catch(ui.getOldListFailure)
+}
+
 const onItemUpdate = function (event) {
   event.preventDefault()
   console.log(store.oldList.id)
@@ -33,7 +43,7 @@ const onItemClick = function (event) {
     store.itemUpdate.content = $(event.target).data('content')
     const listHtml = (`
       <form id="update-item-form" class="change-pass-form update-item-form" style="width: 100%; display: block; margin: auto; height: 120px;">
-       <input type="TEXT" name= "item[content]" placeholder="${store.itemUpdate.content}" class="input-field"><p></p>   <p class="nvm" data-id=${store.itemUpdate.id}>NVM</p> <p class="remove-list" data-id=${store.itemUpdate.id}>X</p>
+       <input type="TEXT" name= "item[content]" placeholder="${store.itemUpdate.content}" class="input-field"><p></p>   <p class="nvm" data-id=${store.itemUpdate.id}>NVM</p> <p class="remove-item" data-id=${store.itemUpdate.id}>X</p>
         </form>
     `)
     $(this).html(listHtml).removeClass('item-changer')
@@ -97,5 +107,6 @@ module.exports = {
   onLoadList,
   onItemClick,
   onNvmClick,
-  onItemUpdate
+  onItemUpdate,
+  onRemoveItemClick
 }

@@ -33,6 +33,9 @@ $(() => {
   $('body').on('mouseout', '.nvm', userEvents.onNvmOff)
   $('body').on('click', '.nvm', listEvents.onNvmClick)
   $('body').on('submit', '.update-item-form', listEvents.onItemUpdate)
+  $('body').on('click', '.remove-item', listEvents.onRemoveItemClick)
+  $('body').on('mouseenter', '.remove-item', userEvents.onDeleteHover)
+  $('body').on('mouseout', '.remove-item', userEvents.onDeleteOff)
 })
 
 // use require with a reference to bundle the file and use it in this file

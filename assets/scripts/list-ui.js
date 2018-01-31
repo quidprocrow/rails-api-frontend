@@ -8,7 +8,7 @@ const indexListTemplate = require('./indexListTemplate.handlebars')
 const removeListSuccess = function () {
   api.getListIndex()
     .then(indexListSuccess)
-    .catch(console.errors)
+    .catch(getOldListFailure)
 }
 
 // Index Lists.
@@ -16,12 +16,6 @@ const indexListSuccess = function (data) {
   const indexListHtml = indexListTemplate({ lists: data.lists })
   $('#list-index').html(indexListHtml)
 }
-
-// // Index Lists.
-// const indexListFailure = function (data) {
-//   const indexListHtml = indexListTemplate({ lists: data.lists })
-//   $('#list-index').html(showListHtml)
-// }
 
 // Indicate success .
 const createListSuccess = function (data) {

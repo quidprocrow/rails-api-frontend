@@ -344,6 +344,12 @@ p {
 }
 
 @media only screen and (max-width: 650px) {
+
+#hover-directions {
+    width: 100%;
+    height: 500px;
+    color: pink;
+  }
   .navbar-collapse {
     float: left;
     clear: left;

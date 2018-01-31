@@ -24,6 +24,10 @@ $(() => {
   $('#write-list').hide()
   $('body').on('click', '.remove-list', listEvents.onRemoveList)
   $('body').on('click', '.load-list', listEvents.onLoadList)
+  $('body').on('mouseenter', '.remove-list', userEvents.onDeleteHover)
+  $('body').on('mouseout', '.remove-list', userEvents.onDeleteOff)
+  $('body').on('mouseenter', '.load-list', userEvents.onLoadHover)
+  $('body').on('mouseout', '.load-list', userEvents.onLoadOff)
 })
 
 // use require with a reference to bundle the file and use it in this file

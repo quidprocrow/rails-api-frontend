@@ -6,6 +6,22 @@ const listApi = require('./list-api')
 const listUi = require('./list-ui')
 const store = require('./store')
 
+const onDeleteHover = function () {
+  $('#hover-directions').html('DUST THAT LIST')
+}
+
+const onDeleteOff = function () {
+  $('#hover-directions').html('TO BE DONE')
+}
+
+const onLoadHover = function () {
+  $('#hover-directions').html('ADD TASKS')
+}
+
+const onLoadOff = function () {
+  $('#hover-directions').html('TO BE DONE')
+}
+
 // User is directed to the index.
 const indexListRedirect = function () {
   $('#two-player').hide()
@@ -20,9 +36,10 @@ const indexListRedirect = function () {
   $('#create-list').hide()
   $('#write-list').hide()
   $('#write-list-area').html('')
+  $('#hover-directions').html('TO BE DONE')
   listApi.getListIndex()
     .then(listUi.indexListSuccess)
-    .catch(console.errors)
+    .catch(listUi.getOldListFailure)
 }
 
 // User is directed to the credit.
@@ -39,6 +56,7 @@ const creditRedirect = function () {
   $('#create-list').hide()
   $('#write-list').hide()
   $('#write-list-area').html('')
+  $('#hover-directions').html('TO BE DONE')
 }
 
 // Takes the two inputs and creates a passwords objects with old and new keys,
@@ -68,6 +86,7 @@ const changePasswordRedirect = function () {
   $('#create-list').hide()
   $('#write-list').hide()
   $('#write-list-area').html('')
+  $('#hover-directions').html('TO BE DONE')
 }
 
 // User is directed to create a new list.
@@ -84,6 +103,7 @@ const createListRedirect = function () {
   $('#create-list').show()
   $('#write-list').hide()
   $('#write-list-area').html('')
+  $('#hover-directions').html('TO BE DONE')
 }
 
 // User is signed out.
@@ -172,5 +192,9 @@ module.exports = {
   addSignInHandlers,
   addSignUpHandlers,
   addIntroHandlers,
-  addProfileHandlers
+  addProfileHandlers,
+  onDeleteOff,
+  onDeleteHover,
+  onLoadOff,
+  onLoadHover
 }

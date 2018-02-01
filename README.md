@@ -5,7 +5,8 @@
 A simple to-do list application that makes API requests to get information
 on a specific user's lists and tasks.
 
-- [API](https://github.com/quidprocrow/rails-api-project)
+- [API Repo](https://github.com/quidprocrow/rails-api-project)
+- [API](https://shrouded-wave-18009.herokuapp)
 
 ## Technologies Used
 - Ruby on Rails - [see here](https://github.com/quidprocrow/rails-api-project).

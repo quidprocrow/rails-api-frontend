@@ -1,61 +1,44 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# browser-template
+# Blisst
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+A simple to-do list application.
 
-## Installation
+## Technologies Used
+- Ruby on Rails [see here](https://github.com/quidprocrow/rails-api-project).
+- Javascript
+- JSON
+- HTML5
+- CSS3
+- PostgreSQL
 
-1.  [Download](../../archive/master.zip) this template.
-1.  Unzip and rename the template directory.
-1.  Empty [`README.md`](README.md) and fill with your own content.
-1.  Replace all instances of `ga-wdi-boston.browser-template` with the name of your project.
-1.  Move into the new project and `git init`
-1.  Add all of the files in your project with the command `git add -A`
-  -   *Note:* THIS IS THE ONLY TIME YOU SHOULD RUN THIS COMMAND
-1.  Commit all of your files with the command `git commit`
-  -   Your commit title should read `Initial commit`
-1.  Install dependencies with `npm install`.
+## User Stories
 
-## Structure
+As a user, I want to be able to create a list, and access it again later.
+As a user, I want to name my list.
+As a user, I want to be able to make more than one list.
+As a user, I want to add items to my list.
+As a user, I want to be able to delete items.
+As a user, I want to be able to update items.
+As a user, I want to be able to destroy lists, and so all list items.
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+## Wireframes
 
-Developers should set `config.apiOrigins.production` (and
-`config.apiOrigins.development` if it differs from the default).  With
-`apiOrigins` set, developers may rely on `config.apiOrigin` as the base for API
-URLs.
+See [here](https://ibb.co/nzhk1w).
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss).
+## Development Journey
+Unfortunately, this has not yet reached my dream: my hope was to make list items
+archiveable, because the best part of a to-do list is watching things check off.
+Hence the title, #Blisst, like bliss and hashtag-blessed. You're in a good place
+when you're getting things done and still have more to do.
 
-Developers should use [getFormFields](forms.md) to retrieve form data to send to
-an API. 
+As it is, after building the API, I wanted most actions to be grounded in the lists
+themselves. I wanted list items to be editable (everyone makes mistakes), and deleteable.
+The success of most API actions initiates some sort of get request, so that
+the information on the page always reflects the most accurate version.
 
-To deploy a browser-template based SPA, run `grunt deploy`.
 
-## Tasks
+## Future Development
 
-Developers should run these often!
-
--   `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
--   `grunt make-standard`: reformats all your code in the JavaScript Standard Style
--   `grunt <server|serve|s>`: generates bundles, watches, and livereloads
--   `grunt test`: runs any automated tests, depends on `grunt build`
--   `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-
-## [License](LICENSE)
-
-1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
-1.  All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+1. Archiving
+2. Catharsis page (loads item, asks why it isn't done, asks if you did your best.)

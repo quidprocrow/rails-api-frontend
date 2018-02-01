@@ -6,7 +6,8 @@ const indexListTemplate = require('./indexListTemplate.handlebars')
 
 const getItemSuccess = function (data) {
   $('#yelling').html(data.item.content).css('text-transform', 'uppercase')
-  const userGreet = store.user.email.split('@')
+  let userGreet = store.user.email.split('@')
+  userGreet = userGreet.toString().toUpperCase()
   $('#yelling-area').html('Do that, ' + userGreet + '.').addClass('center')
 }
 

@@ -86,6 +86,28 @@ const deleteItem = function (data) {
   })
 }
 
+// Gets all items.
+const getItems = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/items/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+// Gets an item.
+const getItem = function (getMe) {
+  return $.ajax({
+    url: config.apiOrigin + '/items/' + getMe,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createList,
   createItem,
@@ -93,5 +115,7 @@ module.exports = {
   getListIndex,
   deleteList,
   updateItem,
-  deleteItem
+  deleteItem,
+  getItems,
+  getItem
 }

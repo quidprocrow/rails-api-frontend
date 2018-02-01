@@ -48,6 +48,7 @@ const yellingRedirect = function () {
   $('#write-list-area').html('')
   $('#hover-directions').html('TO BE DONE')
   $('#yell-at-me').show()
+  $('#create-list-notification').html('')
 }
 
 // User is directed to the index.
@@ -66,6 +67,7 @@ const indexListRedirect = function () {
   $('#write-list-area').html('')
   $('#hover-directions').html('TO BE DONE')
   $('#yell-at-me').hide()
+  $('#create-list-notification').html('')
   listApi.getListIndex()
     .then(listUi.indexListSuccess)
     .catch(listUi.getOldListFailure)
@@ -87,6 +89,7 @@ const creditRedirect = function () {
   $('#write-list-area').html('')
   $('#hover-directions').html('TO BE DONE')
   $('#yell-at-me').hide()
+  $('#create-list-notification').html('')
 }
 
 // Takes the two inputs and creates a passwords objects with old and new keys,
@@ -118,6 +121,7 @@ const changePasswordRedirect = function () {
   $('#write-list-area').html('')
   $('#hover-directions').html('TO BE DONE')
   $('#yell-at-me').hide()
+  $('#create-list-notification').html('')
 }
 
 // User is directed to create a new list.
@@ -136,6 +140,7 @@ const createListRedirect = function () {
   $('#write-list-area').html('')
   $('#hover-directions').html('TO BE DONE')
   $('#yell-at-me').hide()
+  $('#create-list-notification').html('')
 }
 
 // User is signed out.

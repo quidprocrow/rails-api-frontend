@@ -4,6 +4,19 @@ const api = require('./list-api')
 const showListTemplate = require('./showListTemplate.handlebars')
 const indexListTemplate = require('./indexListTemplate.handlebars')
 
+const getItemSuccess = function (data) {
+  $('#yelling').html(data.item.content).css('text-transform', 'uppercase')
+}
+
+const getItemsSuccess = function (data) {
+  console.log(data.items)
+  const getMe = data.items[Math.floor(Math.random() * Math.floor(data.items.length))].id
+  console.log('I am getMe', getMe)
+  api.getItem(getMe)
+    .then(getItemSuccess)
+    .catch(console.error)
+}
+
 // Display the fact of an error to the user.
 const itemUpdateFailure = function (data) {
   const errorHtml = (`
@@ -36,6 +49,7 @@ const createListSuccess = function (data) {
   $('#profile').hide()
   $('#write-list').show()
   $('#yell-at-me').hide()
+  $('#create-list-notification').html('')
   const nameHtml = (`
     ${store.newList.name}
     `)
@@ -58,6 +72,7 @@ const createListFailure = function (data) {
 const getListSuccess = function (data) {
   store.itemBeingEdited = false
   $('#list-directions').html('CLICK TO EDIT ITEMS')
+  $('#create-list-notification').html('')
   const showListHtml = showListTemplate({ items: data.list.items })
   $('#write-list-area').html(showListHtml)
 }
@@ -103,6 +118,8 @@ const getOldListSuccess = function (data) {
   $('#profile').hide()
   $('#write-list').show()
   $('#yell-at-me').hide()
+  $('#create-list-notification').html('')
+  $('#write-list-notification').html('')
   const nameHtml = (`
     ${store.oldList.name}
     `)
@@ -119,6 +136,7 @@ const getOldListFailure = function (data) {
     </p>
     `)
   $('#profile-error').html(errorHtml).attr('class', 'center')
+  $('#create-list-notification').html('')
 }
 
 module.exports = {
@@ -132,5 +150,6 @@ module.exports = {
   removeListSuccess,
   getOldListSuccess,
   getOldListFailure,
-  itemUpdateFailure
+  itemUpdateFailure,
+  getItemsSuccess
 }

@@ -4,6 +4,13 @@ const api = require('./list-api')
 const ui = require('./list-ui')
 const store = require('./store')
 
+const yellAtMe = function (event) {
+  event.preventDefault()
+  api.getItems()
+    .then(ui.getItemsSuccess)
+    .catch(console.error)
+}
+
 const onRemoveItemClick = function (event) {
   event.preventDefault()
   let data = event.target
@@ -96,6 +103,7 @@ const writeNewListItem = function (event) {
 const addListHandlers = function () {
   $('#create-list-form').on('submit', createNewList)
   $('#write-list-form').on('submit', writeNewListItem)
+  $('#yelling-form').on('submit', yellAtMe)
 }
 
 module.exports = {

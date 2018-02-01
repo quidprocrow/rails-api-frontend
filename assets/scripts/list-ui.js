@@ -6,7 +6,8 @@ const indexListTemplate = require('./indexListTemplate.handlebars')
 
 const getItemSuccess = function (data) {
   $('#yelling').html(data.item.content).css('text-transform', 'uppercase')
-  $('#yelling-area').html('Do that.').addClass('center')
+  const userGreet = store.user.email.split('@')
+  $('#yelling-area').html('Do that, ' + userGreet + '.').addClass('center')
 }
 
 const getItemFailure = function (data) {
@@ -20,7 +21,8 @@ const getItemsSuccess = function (data) {
       .then(getItemSuccess)
       .catch(getItemFailure)
   } else {
-    $('#yelling').html('MAKE A LIST, BRAH').css('text-transform', 'uppercase')
+    const userGreet = store.user.email.split('@')
+    $('#yelling').html('MAKE A LIST, ' + userGreet).css('text-transform', 'uppercase')
   }
 }
 

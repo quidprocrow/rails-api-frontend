@@ -5,7 +5,7 @@
 A simple to-do list application.
 
 ## Technologies Used
-- Ruby on Rails [see here](https://github.com/quidprocrow/rails-api-project).
+- Ruby on Rails - [see here](https://github.com/quidprocrow/rails-api-project).
 - Javascript
 - JSON
 - HTML5

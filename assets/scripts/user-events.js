@@ -50,6 +50,8 @@ const yellingRedirect = function () {
   $('#yell-at-me').show()
   $('#create-list-notification').html('')
   $('#proile-error').html('')
+  $('#yelling').html('NEED SOME DIRECTION?')
+  $('#yelling-area').html('')
 }
 
 // User is directed to the index.

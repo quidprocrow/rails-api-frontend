@@ -6,6 +6,7 @@ const indexListTemplate = require('./indexListTemplate.handlebars')
 
 const getItemSuccess = function (data) {
   $('#yelling').html(data.item.content).css('text-transform', 'uppercase')
+  $('#yelling-area').html('Do that.').addClass('center')
 }
 
 const getItemFailure = function (data) {

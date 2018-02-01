@@ -54,6 +54,8 @@ const signOutSuccess = function (data) {
   $('#write-list-area').html('')
   $('#yell-at-me').hide()
   $('#proile-error').html('')
+  $('#yelling').html('NEED SOME DIRECTION?')
+  $('#yelling-area').html('')
   store.user = null
   $('#game-title').text('BYE BYE BYE').css('text-transform', 'uppercase')
   $('#sign-up-notification').html('')

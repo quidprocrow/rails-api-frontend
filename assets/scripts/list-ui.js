@@ -36,13 +36,19 @@ const itemUpdateFailure = function (data) {
 const removeListSuccess = function () {
   api.getListIndex()
     .then(indexListSuccess)
-    .catch(getOldListFailure)
+    .catch(indexListFailure)
 }
 
 // Index Lists.
 const indexListSuccess = function (data) {
   const indexListHtml = indexListTemplate({ lists: data.lists })
   $('#list-index').html(indexListHtml)
+  $('#profile-error').html('')
+}
+
+// Index Lists.
+const indexListFailure = function () {
+  $('#profile-error').html("That's so weird!").addClass('center')
 }
 
 // Indicate success .
@@ -56,6 +62,7 @@ const createListSuccess = function (data) {
   $('#write-list').show()
   $('#yell-at-me').hide()
   $('#create-list-notification').html('')
+  $('#proile-error').html('')
   const nameHtml = (`
     ${store.newList.name}
     `)
@@ -79,6 +86,7 @@ const getListSuccess = function (data) {
   store.itemBeingEdited = false
   $('#list-directions').html('CLICK TO EDIT ITEMS')
   $('#create-list-notification').html('')
+  $('#proile-error').html('')
   const showListHtml = showListTemplate({ items: data.list.items })
   $('#write-list-area').html(showListHtml)
 }
@@ -126,6 +134,7 @@ const getOldListSuccess = function (data) {
   $('#yell-at-me').hide()
   $('#create-list-notification').html('')
   $('#write-list-notification').html('')
+  $('#proile-error').html('')
   const nameHtml = (`
     ${store.oldList.name}
     `)
@@ -157,5 +166,6 @@ module.exports = {
   getOldListSuccess,
   getOldListFailure,
   itemUpdateFailure,
-  getItemsSuccess
+  getItemsSuccess,
+  indexListFailure
 }

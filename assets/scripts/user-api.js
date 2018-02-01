@@ -37,7 +37,6 @@ const signInUser = function (data) {
 
 // Signs up user.
 const signUpUser = function (data) {
-  console.log(config.apiOrigin)
   return $.ajax({
     url: config.apiOrigin + '/sign-up',
     method: 'POST',

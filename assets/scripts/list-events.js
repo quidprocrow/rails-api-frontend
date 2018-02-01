@@ -15,7 +15,6 @@ const onRemoveItemClick = function (event) {
   event.preventDefault()
   let data = event.target
   data = $(event.target).data('id')
-  console.log(data)
   api.deleteItem(data)
     .then(ui.createItemSuccess)
     .catch(ui.getOldListFailure)

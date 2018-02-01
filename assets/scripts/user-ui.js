@@ -41,7 +41,7 @@ const signOutSuccess = function (data) {
   $('#instructions').hide()
   $('#credit').hide()
   $('#personal-statistics').hide()
-  $('#profile-error').remove()
+  $('#profile-error').hide()
   $('#show-games').html('')
   $('.game-link').hide()
   $('.non-game').hide()
@@ -53,6 +53,7 @@ const signOutSuccess = function (data) {
   $('#write-list').hide()
   $('#write-list-area').html('')
   $('#yell-at-me').hide()
+  $('#proile-error').html('')
   store.user = null
   $('#game-title').text('BYE BYE BYE').css('text-transform', 'uppercase')
   $('#sign-up-notification').html('')
@@ -61,7 +62,6 @@ const signOutSuccess = function (data) {
 
 // Display the fact of an error to the user.
 const signOutFailure = function (data) {
-  console.log('BIG FAILURE')
   const errorHtml = (`<p>
     <b>Oops!</b> There's been an error!
     </p>
@@ -125,7 +125,7 @@ const signInSuccess = function (data) {
   }
   listApi.getListIndex()
     .then(listUi.indexListSuccess)
-    .catch(console.errors)
+    .catch(listUi.indexListFailure)
 }
 
 // Display the fact of an error to the user.

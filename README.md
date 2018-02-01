@@ -42,3 +42,9 @@ the information on the page always reflects the most accurate version.
 
 1. Archiving
 2. Catharsis page (loads item, asks why it isn't done, asks if you did your best.)
+
+## Gratitude
+
+1. Shaun White, Sarah Burke and Brian Keegan all kindly reviewed my deployments for errors.
+2. Kostant Stanton was a tremendous help with serialization issues, then later
+advised me on how best to change validation on my API.

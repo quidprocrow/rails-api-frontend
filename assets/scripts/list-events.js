@@ -8,7 +8,7 @@ const yellAtMe = function (event) {
   event.preventDefault()
   api.getItems()
     .then(ui.getItemsSuccess)
-    .catch(console.error)
+    .catch(ui.getItemFailure)
 }
 
 const onRemoveItemClick = function (event) {

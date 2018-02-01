@@ -8,13 +8,19 @@ const getItemSuccess = function (data) {
   $('#yelling').html(data.item.content).css('text-transform', 'uppercase')
 }
 
+const getItemFailure = function (data) {
+  $('#yelling-notification').html('This is an error message, and probably your fault.')
+}
+
 const getItemsSuccess = function (data) {
-  console.log(data.items)
-  const getMe = data.items[Math.floor(Math.random() * Math.floor(data.items.length))].id
-  console.log('I am getMe', getMe)
-  api.getItem(getMe)
-    .then(getItemSuccess)
-    .catch(console.error)
+  if (data.items.length > 0) {
+    const getMe = data.items[Math.floor(Math.random() * Math.floor(data.items.length))].id
+    api.getItem(getMe)
+      .then(getItemSuccess)
+      .catch(getItemFailure)
+  } else {
+    $('#yelling').html('MAKE A LIST, BRAH').css('text-transform', 'uppercase')
+  }
 }
 
 // Display the fact of an error to the user.

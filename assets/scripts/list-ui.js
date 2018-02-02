@@ -45,9 +45,15 @@ const removeListSuccess = function () {
 
 // Index Lists.
 const indexListSuccess = function (data) {
-  const indexListHtml = indexListTemplate({ lists: data.lists })
-  $('#list-index').html(indexListHtml)
-  $('#profile-error').html('')
+  if (data.lists.length > 0) {
+    const indexListHtml = indexListTemplate({ lists: data.lists })
+    $('#list-index').html(indexListHtml)
+    $('#profile-error').html('')
+  } else {
+    $('#hover-directions').html('TO BE DONE')
+    const userGreet = store.user.email.split('@')
+    $('#list-index').html('NO LISTS TO SHOW, ' + userGreet).css('text-transform', 'uppercase')
+  }
 }
 
 // Index Lists.

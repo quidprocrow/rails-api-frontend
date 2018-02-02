@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>#BLISST</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+<!-- INTRO SECTION -->
+      <section id="intro">
+        <h1 id="game-title" class="shrink">#BLISST</h1>
+        <button class="big-button" id="sign-in-button">SIGN IN</button>
+        <button class="big-button" id="sign-up-button">SIGN UP</button>
+      </section>
+<!-- NAVIGATION SECTION -->
+            <nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="background: black;" id="navigation">
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="https://image.ibb.co/gP5Rim/contract.png" alt="Toggle me!">
+              </button>
+              <a class="navbar-brand" href="#" id="greeting-space">GO <span class="user-greeting"></span> GO</a>
+              <a class="navbar-brand" href="#" id="sign-space">SIGN</a>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                    <a class="nav-link non-game sign-link" href="#" id="sign-in-link">IN</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link non-game sign-link" href="#" id="sign-up-link">UP</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link non-game" href="#" id="index-list-link">ALL LISTS</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link non-game" href="#" id="create-list-link">NEW LIST</a>
+                  <li class="nav-item active">
+                    <a class="nav-link non-game" href="#" id="yelling-link">YELL AT ME</a>
+                  </li>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link non-game" href="#" id="change-password-link">CHANGE PASS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link non-game" href="#" id="credit-link">CREDIT</a>
+                  </li>
+                  <li class="nav-item non-game">
+                    <a class="nav-link" href="#" id="sign-out-link">SIGN OUT</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+<!-- SIGN IN SECTION -->
+      <section id="sign-in">
+        <h1 class="shrink">SIGN IN</h1>
+        <form id="sign-in-form">
+          <div class="center">
+            <input type="text" name="credentials[email]" placeholder="EMAIL" class="input-field">
+          </div>
+          <div class="center">
+          <input type="password" name= "credentials[password]" placeholder="PASSWORD" class="input-field">
+          </div>
+          <button class="little-button" id="sign-in-form-button">SIGN IN</button>
+        </form>
+        <div id="sign-in-notification">
+        </div>
+      </section>
+<!-- SIGN UP SECTION -->
+      <section id="sign-up">
+        <form id="sign-up-form">
+          <h1 class="shrink">SIGN UP</h1>
+          <div class="center">
+            <input type="text" name="credentials[email]" placeholder="EMAIL" class="input-field">
+          </div>
+          <div class="center">
+          <input type="password" name= "credentials[password]" placeholder="PASSWORD" class="input-field">
+          </div>
+          <div class="center">
+          <input type="password" name= "credentials[password_confirmation]" placeholder="PASSWORD CONFIRMATION" class="input-field">
+          </div>
+          <button class="little-button" id="sign-up-form-button">SIGN UP</button>
+          <div id="sign-up-notification">
+          </div>
+        </form>
+      </section>
+<!-- PROFILE SECTION -->
+      <section id="profile" class="profile">
+        <div class="center">
+          <h1 class="shrink hoverx" id="hover-directions">TO BE DONE</h1>
+        </div>
+        <div class="list-area" id="list-index">
+        </div>
+        <div id="profile-error">
+        </div>
+      </section>
+<!-- CHANGE PASS SECTION -->
+      <section id="change-pass" class="change-pass">
+        <h1 class="shrink">CHANGE PASS</h1>
+        <form id="change-password-form" class="change-pass-form">
+          <div class="center">
+          <input type="password" name= "passwords[old]" placeholder="OLD PASSWORD" class="input-field">
+          </div>
+          <div class="center">
+          <input type="password" name= "passwords[new]" placeholder="NEW PASSWORD" class="input-field">
+          </div>
+          <button class="little-button" id="change-password-form-button">CONFIRM CHANGE</button>
+        </form>
+        <div id="password-notification">
+        </div>
+      </section>
+      <!-- CREDIT SECTION -->
+      <section id="credit">
+        <h1 class ="shrink">CREDIT</h1>
+        <div class="quote">
+          <p>
+            <B>Creativity is usually a failure to cite.</b>
+          </p>
+          <p>
+            &mdash; <span class="uppercase"><i>someone</i></span>
+          </p>
+        </div>
+        <div class="justify">
+          <p>
+          This project is part of the <u>General Assembly Boston</u> curriculum, fulfilled here with some personal stylings by Sophia Derugen-Toomey. It was built in <a href="https://atom.io/">Atom</a> out of HTML, Sass, jQuery, and Javascript, coated in Google's <a href="https://fonts.google.com/specimen/Josefin+Sans">Josefin Sans</a> font, with a <a href="https://www.flaticon.com/free-icon/contract_684831">Freepik</a> icon for style and generous hosting by by <a href="https://pages.github.com/">Github Pages</a>.
+          </p>
+        </div>
+        <h1 class="shrink">SOPHIA</h1>
+        <div class="justify">
+          <p>
+          Sophia likes to play single-player games that let you have a pet and movies that are fast or furious (<a href="https://en.wikipedia.org/wiki/Logical_disjunction">inclusive &lsquo;or&rsquo;</a>). Please feel free to <a href="mailto:sophia.derugen-toomey@gmail.com">@</a> her.
+          </p>
+        </div>
+      </section>
+<!-- CREATE LIST SECTION -->
+      <section id="create-list" class="change-pass">
+        <h1 class="shrink">NEW LIST</h1>
+        <form id="create-list-form" class="change-pass-form">
+          <div class="center">
+          <input type="text" name= "list[name]" placeholder="NAME OF LIST" class="input-field">
+          </div>
+          <button class="little-button" id="create-list-form-button">CREATE LIST</button>
+        </form>
+        <div id="create-list-notification">
+        </div>
+      </section>
+<!-- LIST SECTION -->
+      <section id="write-list" class="change-pass">
+        <h1 class="shrink" id="list-name">NEW LIST</h1>
+        <p class="center" id="list-directions" style="background: black; color: white; text-transform: uppercase;">Click items to edit tasks</p>
+        <p>
+        <div id="write-list-area" class="center">
+        </div>
+        <form id="write-list-form" class="change-pass-form">
+          <div class="center">
+            <!-- <input type="checkbox" name="archived"> -->
+          <input type="TEXT" name= "item[content]" placeholder="WHAT NEEDS DOING?" class="input-field">
+          </div>
+          <button class="little-button" id="write-list-form-button">ADD ITEM</button>
+        </form>
+        <div id="write-list-notification">
+        </div>
+      </section>
+<!-- ITEM SECTION -->
+      <section id="yell-at-me" class="change-pass">
+        <h1 class="shrink" id="yelling">NEED SOME DIRECTION?</h1>
+        <div id="yelling-area" class="center">
+        </div>
+        <form id="yelling-form" class="change-pass-form">
+          <button class="little-button" id="yelling-form-button">CLICK TO GENERATE A TASK TO PERFORM</button>
+        </form>
+        <div id="yelling-notification">
+        </div>
+      </section>
+    </body>
+</html>
